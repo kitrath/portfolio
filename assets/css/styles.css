@@ -2,13 +2,19 @@
 :root {
     /* set four colors for entire page here */
     --text: rgb(49, 47, 23); 
+    --link-visited: rgb(102, 49, 64);
+    --link-hover: #acacac;
     --bkground: rgb(235, 230, 222); 
+    --border-color: #c5c5c5;
 }
 
 html {
     /* set 1rem to 10px as 28_Stu_Mini-Project style.css */
     font-size: 62.5%;
     background-color: var(--bkground);
+
+    /* https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/ */
+    scroll-behavior: smooth;
 }
 
 body {
@@ -29,16 +35,72 @@ h1, h2, h3 {
     line-height: 1.1;
 }
 
-h1 {
-    font-size: 3.5rem;
+header h1 {
+    font-size: 4rem;
+    margin-bottom: 3rem;
 }
+
+header ul {
+    display: flex;
+    flex-direction: column;
+    gap: 1.4rem;
+    justify-content: center;
+    align-items: center;
+}
+
+header ul li a {
+    text-decoration: none;
+    color: var(--text);
+    font-size: 2.25rem;
+}
+
+nav a:visited {
+    color: var(--link-visited);
+}
+
+nav a:hover {
+    color: var(--link-hover);
+}
+
+nav a:focus {
+    color: var(--link-hover);
+}
+
+nav a:active {
+    color: orangered;
+}
+
 
 h2 {
     font-size: 3rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid var(--border-color);
+    margin: 3rem 2rem 1rem 2rem;
 }
 
 h3 {
     font-size: 2.5rem;
+}
+
+#about {
+    display: flex;
+    flex-direction: column;
+    justify-items: flex-start;
+    gap: 2rem;
+}
+
+#about div.image-container {
+   text-align: center; 
+}
+
+#about div img {
+    display: block;
+    /* center portrait image on phones */
+    margin: 0 auto;
+}
+
+#about p {
+    margin: 1rem 2rem;
 }
 
 #work {
@@ -55,22 +117,88 @@ h3 {
 
 .card {
     flex: 1 0 100%;
+    margin-top: 0.75rem;
+    margin-bottom: 0.75rem;
     /* when screen resizes, don't jump in size */
+    
     transition: flex-basis 300ms linear;
 }
-/* Tablets */
+
+.card a {
+    display: block;
+    position: relative;
+    /* no underline in card texts */
+    text-decoration: none;
+}
+
+.card a div.card-info {
+    position: absolute;
+    left: 30px;
+    bottom: 60px;
+}
+
+.card a img {
+    /* let images resize to width/height of .card */
+    width: 100%;
+    height: auto;
+}
+
+/* tablets */
 @media screen and (min-width: 768px) {
     body {
         width: 92%;
     }
-    .card {
-        flex: 0 0 50%;
-        max-width: 50%;
+
+    header {
+        margin-top: 2rem;
+        margin-bottom: 3rem;
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
     }
-}
+
+    header h1 {
+        margin: 0 auto 0 2rem;
+    }
+
+    header ul {
+        padding-top: 1.5rem;
+        flex-direction: row;
+        gap: 5rem;
+    }
+
+    #about div.img-container {
+        margin-bottom: 3rem;
+    }
+ 
+   
+ }
 /* Desktop sizes */
 @media screen and (min-width: 992px) {
     body {
-        width: 86%;
+        width: 80%;
+    }
+
+    #about > div {
+        display: flex;
+        flex-direction: row;
+        margin-bottom: 4rem;
+    }
+    
+    #about div.img-container {
+        margin-left: 2rem;
+    }
+
+    #about p {
+        margin-left: 8rem;
+    }
+}
+
+/* Disable smooth scrolling when users have prefers-reduced-motion enabled 
+ * https://gomakethings.com/how-to-animate-scrolling-to-anchor-links-with-one-line-of-css/
+ */
+@media screen and (prefers-reduced-motion: reduce) {
+    html {
+        scroll-behavior: auto;
     }
 }
