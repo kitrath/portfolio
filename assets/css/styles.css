@@ -132,8 +132,7 @@ section {
 
 .card a {
     display: inline-block;
-    position: relative;
-    /* important to constrain height of images */
+    position: relative; 
     /* no underline in card texts */
     text-decoration: none;
     width: 100%;
@@ -147,6 +146,10 @@ section {
     border-top: 1px solid var(--border-color);
     border-bottom: 1px solid var(--border-color);
     border-radius: 0px 16px 16px 0px;
+}
+
+.card a div.card-info h3 {
+    color: rgb(110, 103, 102);
 }
 
 .card a img {
