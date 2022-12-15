@@ -40,7 +40,9 @@ header h1 {
     margin-bottom: 3rem;
 }
 
-header ul {
+
+header ul,
+footer ul {
     display: flex;
     flex-direction: column;
     gap: 1.4rem;
@@ -180,6 +182,11 @@ section {
         padding-top: 1.5rem;
         flex-direction: row;
         gap: 5rem;
+    }
+
+    footer ul {
+        flex-direction: row;
+        justify-content: space-between;
     }
 
     #about div.img-container {
