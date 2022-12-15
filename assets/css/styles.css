@@ -51,8 +51,8 @@ footer ul {
     align-items: center;
 }
 
-header ul li a,
-#contact a {
+header ul li a:link,
+#contact a:link {
     text-decoration: none;
     color: var(--reddish);
     font-size: 2.25rem;
@@ -75,7 +75,7 @@ nav a:focus,
 }
 
 nav a:active,
-#contact a:focus {
+#contact a:active {
     color: orangered;
 }
 
