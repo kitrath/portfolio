@@ -2,7 +2,8 @@
 :root {
     /* set four colors for entire page here */
     --text: rgb(49, 47, 23); 
-    --link-visited: rgb(102, 49, 64);
+    --reddish: rgb(102, 49, 64);
+    --hover-shadow: rgba(142, 89, 104, 0.7);
     --link-hover: #acacac;
     --bkground: rgb(235, 230, 222); 
     --border-color: #c5c5c5;
@@ -50,25 +51,31 @@ footer ul {
     align-items: center;
 }
 
-header ul li a {
+header ul li a,
+#contact a {
     text-decoration: none;
-    color: var(--text);
+    color: var(--reddish);
     font-size: 2.25rem;
 }
 
-nav a:visited {
-    color: var(--link-visited);
+nav a:visited,
+#contact a:visited {
+    color: var(--reddish);
 }
 
-nav a:hover {
+nav a:hover,
+#contact a:hover {
+    color: var(--link-hover);
+    text-decoration: underline;
+}
+
+nav a:focus,
+#contact a:focus {
     color: var(--link-hover);
 }
 
-nav a:focus {
-    color: var(--link-hover);
-}
-
-nav a:active {
+nav a:active,
+#contact a:focus {
     color: orangered;
 }
 
@@ -104,6 +111,7 @@ section {
     display: block;
     /* center portrait image on phones */
     margin: 0 auto;
+    box-shadow: 2px 2px 6px 2px var(--link-hover);
 }
 
 #about p {
@@ -127,9 +135,14 @@ section {
     margin: 3rem 0.75rem;
     /* when screen resizes, don't jump in size */
     transition: flex-basis 300ms linear;
-    box-shadow: 5px 5px 15px var(--link-hover);
+    box-shadow: 5px 5px 10px var(--link-hover);
     max-height: 30rem;
     overflow: hidden;
+}
+
+.card:hover {
+    box-shadow: 5px 5px 5px 5px var(--hover-shadow);
+    border: 3px dotted var(--link-hover);
 }
 
 .card a {
@@ -143,21 +156,34 @@ section {
 .card a div.card-info {
     position: absolute;
     top: 30px;
+    min-width: 40%;
     padding: 1rem 2rem;
     background-color: var(--bkground);
-    border-top: 1px solid var(--border-color);
-    border-bottom: 1px solid var(--border-color);
-    border-radius: 0px 16px 16px 0px;
+    box-shadow: 1px 1px 5px 1px var(--link-hover);
 }
 
 .card a div.card-info h3 {
     color: rgb(110, 103, 102);
 }
 
+.card-subtitle {
+    color: var(--reddish);
+    font-weight: 500;
+}
+
 .card a img {
     /* let images resize to width/height of .card */
     width: 100%;
     height: auto;
+}
+
+#contact a {
+    text-decoration: none;
+}
+
+#contact li {
+    font-size: 2.25rem;
+    color: var(--reddish);
 }
 
 /* tablets */
@@ -169,6 +195,7 @@ section {
     header {
         margin-top: 2rem;
         margin-bottom: 3rem;
+        padding-bottom: 3.5rem;
         display: flex;
         flex-direction: row;
         justify-content: space-between;
@@ -187,6 +214,7 @@ section {
     footer ul {
         flex-direction: row;
         justify-content: space-between;
+        padding: 4rem 2rem 8rem 2rem;
     }
 
     #about div.img-container {
