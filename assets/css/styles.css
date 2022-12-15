@@ -186,6 +186,10 @@ section {
     color: var(--reddish);
 }
 
+footer ul {
+    padding: 4rem 2rem 8rem 2rem;
+}
+
 /* tablets */
 @media screen and (min-width: 768px) {
     body {
@@ -214,7 +218,6 @@ section {
     footer ul {
         flex-direction: row;
         justify-content: space-between;
-        padding: 4rem 2rem 8rem 2rem;
     }
 
     #about div.img-container {
