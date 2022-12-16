@@ -1,21 +1,13 @@
 # Portfolio
 
-## User Story
-**AS AN** employer
-**I WANT** to view a potential employee's deployed portfolio of work samples
-**SO THAT** I can review samples of their work and assess whether they're a good candidate for an open position
+## Description
+This is the first iteration of my portfolio website, originally developed as the week 2 challenge for the KU Coding Bootcamp (December 2022). The site contains a brief paragraph of text about me and links to my work and contact information. The site uses [CSS Flexbox](https://developer.mozilla.org/en-US/docs/Learn/CSS/CSS_layout/Flexbox) and [Media Queries](https://developer.mozilla.org/en-US/docs/Web/CSS/Media_Queries/Using_media_queries) to adapt its design to various screen widths from mobile to desktop. The *Work* section of the current version of this page links only to the first two products of bootcamp. In order to fill out the design of this first version of the site, the final three links and pictures are placeholders.  As the bootcamp continues, all five of the current linked artifacts will be replaced with more substantive work samples.
 
-## Acceptance Criteria
-**GIVEN** I need to sample a potential employee's previous work
-1. **WHEN** I load their portfolio
-    **THEN** I am presented with the developer's name, a recent photo or avatar, and links to sections about them, their work, and how to contact them
-2. **WHEN** I click on one of the links in the navigation
-    **THEN** the UI scrolls to the corresponding section
-3. **WHEN** I click on the link to the section about their work
-    **THEN** the UI scrolls to a section with titled images of the developer's applications
-4. **WHEN** I am presented with the developer's first application
-    **THEN** that application's image should be larger in size than the others
-5. **WHEN** I click on the images of the applications
-    **THEN** I am taken to that deployed application
-6. **WHEN** I resize the page or view the site on various screens and devices
-    **THEN** I am presented with a responsive layout that adapts to my veiwport
+**View the portfolio site here**: [https://kitrath.github.io/portfolio/](https://kitrath.github.io/portfolio/)
+
+## Roadmap
+1. *Revisit Design*: I plan to keep developing this site.  I'd like to employ a structured design process using a tool like Figma in order to rehearse different designs before re-working the CSS.
+
+2. *CSS Grid*: I still need to learn about CSS Grid and discover how to combine it with either Flexbox or Media Queries (or both) to build a smooth, responsive experience.
+
+3. *Application Images*: I would prefer to use images of my application interfaces that integrate with an overall page design better than the two I have used here.  I intend to learn more about best practices for integrating image content with CSS and HTML.  For example, instead of loading blurred images to the page, in a future version of the site, I'd like to structure HTML in a way that allows me to blur the images interactively using [CSS Filters](https://developer.mozilla.org/en-US/docs/Web/CSS/filter-function/blur).
